@@ -5107,7 +5107,7 @@ textarea {
 }
 
 .submit-btn:hover {
-    background-color: #c45b16;
+    background-color: #CA9864;
 }
 
 .close-btn {
@@ -5145,4 +5145,39 @@ textarea {
     .popup-form {
         width: 300px !important;
     }
+}
+
+.thank-you-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #CA9864;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #0F281A;
 }

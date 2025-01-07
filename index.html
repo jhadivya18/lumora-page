@@ -89,7 +89,7 @@
 							</li>
 							<li id="menu-item-569"
 								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-569">
-								<a onclick="navigateAndClose('#contact')" href="#contact">Contact Us</a>
+								<a onclick="openForm('#contact')" href="#contact">Contact Us</a>
 							</li>
 							<li id="menu-item-556"
 								class="menu-item menu-item-type-custom menu-item-object-custom menu-item-556">
@@ -377,7 +377,7 @@
 			</span>
 		</div>
 		<div class="blank"></div>
-		<div class="drection drectionhome">
+		<div class="drection drectionhome" id="enquiry">
 			<h1>Lumora Estate Walkthrough</h1>
 			<iframe width="90%" height="830" src="https://www.youtube.com/embed/bJuweJq6_UA"
 				title="YouTube video player" frameborder="0"
@@ -386,7 +386,7 @@
 		</div>
 		<div class="blank"></div>
 
-		<footer>
+		<footer id="contact">
 			<div class="row no-gutters">
 				<div class="col-12 col-md-4 col-lg-4 col-xl-4 firstsection">
 					<a href="#"><img src="/img/lumora-icon.png" class="img-fluid terrlogo" /></a>
@@ -436,19 +436,19 @@
 				<div class="col-4 col-md-4  col-lg-4 col-xl-4 thirdsection my-auto">
 					<!-- <h2 class="connect">CONNECT</h2> -->
 					<div class="sirmaur_footerlink">
-						<a href="#about-us" onclick="openForm()">About Us</a>
-						<a href="#location" onclick="openForm()">Location</a>
+						<a href="#about-us">About Us</a>
+						<a href="#location">Location</a>
 						<!-- <a href="#" onclick="openForm()">Projects</a> -->
 						<a href="#amenity" onclick="openForm()">Amenities</a>
-						<a href="#enquiry" onclick="openForm()">Floor Plans</a>
+						<!-- <a href="#enquiry" onclick="openForm()">Floor Plans</a> -->
 						<a href="#contact" onclick="openForm()">Contact Us</a>
 					</div>
 					<div class="rushikesh_footerlink">
-						<a href="#about-us" onclick="openForm()">About Us</a>
-						<a href="#location" onclick="openForm()">Location</a>
+						<a href="#about-us">About Us</a>
+						<a href="#location">Location</a>
 						<!-- <a href="#" onclick="openForm()">Projects</a> -->
 						<a href="#amenity" onclick="openForm()">Amenities</a>
-						<a href="#enquiry" onclick="openForm()">Floor Plans</a>
+						<!-- <a href="#enquiry" onclick="openForm()">Floor Plans</a> -->
 						<a href="#contact" onclick="openForm()">Contact Us</a>
 					</div>
 				</div>
@@ -478,44 +478,23 @@
 			</div>
 		</footer>
 	</div>
-
-
-	<script src="/js/jquery-3.6.0.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/common.js"></script>
-	<!-- Meta Pixel Event Code -->
-	<script type='text/javascript'>
-		document.addEventListener('wpcf7mailsent', function (event) {
-			if ("fb_pxl_code" in event.detail.apiResponse) {
-				eval(event.detail.apiResponse.fb_pxl_code);
-			}
-		}, false);
-	</script>
+	<div class="thank-you-popup" id="thankYouPopup">
+		<div class="popup-content">
+			<p id="thankYouMessage" style="display: none;">Thank you for contacting us! We will get back to you shortly.
+			</p>
+			<div id="loadingSpinner">Submitting your request......</div>
+			<button id="closeButton" onclick="closeThankYouPopup()" style="display: none;">Close</button>
+		</div>
+	</div>
 
 	<script>
-		// document.getElementById('contactForm').addEventListener('submit', function (event) {
-		// 	event.preventDefault(); // Prevent form from submitting and causing a page reload
-
-		// 	const formData = {
-		// 		name: document.getElementById('name').value,
-		// 		email: document.getElementById('email').value,
-		// 		mobile: document.getElementById('mobile').value,
-		// 		message: document.getElementById('message').value
-		// 	};
-
-		// 	sendDataToGoogleSheets(formData); // Pass the form data to your function
-		// });
-		// Function to collect form data
 		document.getElementById('fixed-form').addEventListener('submit', function (event) {
 			event.preventDefault();
-			// Create an object to store form data
 			const formData = {};
-
-			// Loop through all form elements and add their values to the formData object
 			const formElements = document.getElementById('fixed-form').elements;
 			for (let i = 0; i < formElements.length; i++) {
 				const element = formElements[i];
-				if (element.name) { // Ensure the element has a name attribute
+				if (element.name) {
 					formData[element.name] = element.value;
 				}
 			}
@@ -523,67 +502,48 @@
 				alert('All fields are required.');
 				return;
 			}
-
-			// Email validation (basic pattern)
 			const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 			if (!emailPattern.test(formData.email)) {
 				alert('Please enter a valid email address.');
 				return;
 			}
-
-			// Mobile number validation (10 digits, starts with 6, 7, 8, or 9)
 			const phonePattern = /^[6-9]\d{9}$/;
 			if (!phonePattern.test(formData.phone)) {
 				alert('Please enter a valid mobile number (10 digits, starting with 6-9).');
 				return;
 			}
-			// Send the form data to Google Sheets via the Apps Script Web App
 			sendDataToGoogleSheets(formData);
 			console.log(formData);
 
 		})
 		function getFormData(event) {
-			event.preventDefault(); // Prevent the default form submission behavior
-			// Select the form element
+			event.preventDefault();
 			const form = document.getElementById('contactForm');
-
-			// Create an object to store form data
 			const formData = {};
-
-			// Loop through all form elements and add their values to the formData object
 			const formElements = form.elements;
 			for (let i = 0; i < formElements.length; i++) {
 				const element = formElements[i];
-				if (element.name) { // Ensure the element has a name attribute
+				if (element.name) {
 					formData[element.name] = element.value;
 				}
 			}
-
 			if (!formData.name || !formData.email || !formData.phone || !formData.message) {
 				alert('All fields are required.');
 				return;
 			}
-
-			// Email validation (basic pattern)
 			const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 			if (!emailPattern.test(formData.email)) {
 				alert('Please enter a valid email address.');
 				return;
 			}
-
-			// Mobile number validation (10 digits, starts with 6, 7, 8, or 9)
 			const phonePattern = /^[6-9]\d{9}$/;
 			if (!phonePattern.test(formData.phone)) {
 				alert('Please enter a valid mobile number (10 digits, starting with 6-9).');
 				return;
 			}
-			// Send the form data to Google Sheets via the Apps Script Web App
 			sendDataToGoogleSheets(formData);
-
-			// Optionally, reset the form after submission (if desired)
 			form.reset();
 		}
-		// Function to send form data to Google Sheets
 		function sendDataToGoogleSheets(formData) {
 			const url = 'https://script.google.com/macros/s/AKfycbz250FLviCPauZcAWt9yr--agkBVYdmXsQKuRjBgNKNzYEotfDWv0AEa93uzPW0ZJW7/exec'; // Replace with your Web App URL
 
@@ -592,41 +552,52 @@
 			data.append('Email', formData.email);
 			data.append('Phone', formData.phone);
 			data.append('Message', formData.message);
+
+			closeForm();
+			showThankYouPopup();
+			document.getElementById('thankYouMessage').style.display = 'none';
+			document.getElementById('loadingSpinner').style.display = 'block';
+			document.getElementById('closeButton').style.display = 'none';
 			fetch(url, {
 				method: 'POST',
 				body: data,
 			})
-				.then(response => response.json())
+				.then(response => {
+					if (!response.ok) {
+						throw new Error('Network response was not ok');
+					}
+					return response.json();
+				})
 				.then(data => {
 					console.log('Form data successfully submitted:', data);
-					alert('Your message has been submitted!');
+					document.getElementById('loadingSpinner').style.display = 'none';
+					document.getElementById('thankYouMessage').style.display = 'block';
+					document.getElementById('closeButton').style.display = 'inline-block';
 				})
 				.catch(error => {
 					console.error('Error submitting form data:', error);
+					document.getElementById('loadingSpinner').style.display = 'none';
 					alert('There was an error submitting your form. Please try again later.');
 				});
 		}
 
-		// Add an event listener for form submission
-		document.getElementById('contactForm').addEventListener('submit', getFormData);
-	</script>
-	<!-- <script>
-	let lastScrollY = window.scrollY;
-	const header = document.getElementById('header');
-	window.addEventListener('scroll', () => {
-		const currentScrollY = window.scrollY;
-
-		if (currentScrollY > lastScrollY) {
-			// Scrolling down
-			header.style.transform = 'translateY(-100%)';
-		} else {
-			// Scrolling up
-			header.style.transform = 'translateY(0)';
+		function showThankYouPopup() {
+			const thankYouPopup = document.getElementById('thankYouPopup');
+			if (thankYouPopup) {
+				thankYouPopup.style.display = 'flex';
+			}
 		}
 
-		lastScrollY = currentScrollY;
-	});
-</script> -->
+		function closeThankYouPopup() {
+			const thankYouPopup = document.getElementById('thankYouPopup');
+			if (thankYouPopup) {
+				thankYouPopup.style.display = 'none';
+			}
+		}
+
+		document.getElementById('contactForm').addEventListener('submit', getFormData);
+	</script>
+
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$(".contactboxfix").click(function () {
@@ -646,13 +617,11 @@
 
 	</script>
 	<script>
-		// Open the popup form with animation
 		function openForm() {
 			document.getElementById("popupForm").classList.add("show");
 			document.getElementById("overlay").classList.add("show");
 		}
 
-		// Close the popup form
 		function closeForm() {
 			document.getElementById("popupForm").classList.remove("show");
 			document.getElementById("overlay").classList.remove("show");
@@ -660,36 +629,34 @@
 	</script>
 	<script>
 		document.addEventListener("DOMContentLoaded", () => {
-			let lastScrollTop = 0; // Track the last scroll position
-			const header = document.getElementById('header'); // Get the header element
+			let lastScrollTop = 0;
+			const header = document.getElementById('header');
 
 			window.addEventListener('scroll', function () {
-				const currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Get the current scroll position
-				const isMobile = window.innerWidth <= 768; // Check if the screen is mobile-sized (<= 768px)
+				const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+				const isMobile = window.innerWidth <= 768;
 
 				if (isMobile) {
-					// For mobile screens: Change background based on scroll position
 					if (currentScroll === 0) {
 						header.style.backgroundColor = 'transparent';
 					} else {
-						header.style.backgroundColor = '#0F281A'; // Adjust as needed
+						header.style.backgroundColor = '#0F281A';
 					}
 				}
-
-				// Header show/hide logic
 				if (currentScroll > lastScrollTop) {
-					// Scrolling down: Hide the header
 					header.classList.add('hidden');
 				} else {
-					// Scrolling up: Show the header
 					header.classList.remove('hidden');
 				}
-
-				lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative values
+				lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 			});
 		});
 	</script>
 
+
+	<script src="/js/jquery-3.6.0.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/common.js"></script>
 </body>
 
 </html>
