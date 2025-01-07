@@ -50,23 +50,26 @@ a:hover {
 
 /* Default icon size (desktop view) */
 .nav-link i {
-    font-size: 30px; 
-    margin-right: 50px; 
-    vertical-align: middle; 
+    font-size: 30px;
+    margin-right: 50px;
+    vertical-align: middle;
 }
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
     color: #fff;
     background-color: transparent;
 }
+
 @media (max-width: 768px) {
     .nav-link i {
-        font-size: 25px; 
+        font-size: 25px;
     }
 }
 
 .nav-link {
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
 }
 
 .wrappermain div {
@@ -252,7 +255,8 @@ a:hover {
     padding: 230px 0px 150px 0px;
     text-align: right;
     position: relative;
-    background: none; /* Remove the background from here */
+    background: none;
+    /* Remove the background from here */
 }
 
 .estate-tabs::before {
@@ -266,8 +270,10 @@ a:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.5; /* Adjust this value to reduce/increase opacity */
-    z-index: -1; /* Ensure the pseudo-element is behind the content */
+    opacity: 0.5;
+    /* Adjust this value to reduce/increase opacity */
+    z-index: -1;
+    /* Ensure the pseudo-element is behind the content */
 }
 
 
@@ -312,7 +318,7 @@ a:hover {
     margin-bottom: 0px;
 }
 
-.estate-tabs .nav-link.active{
+.estate-tabs .nav-link.active {
     background-color: none !important;
     font-family: "Cinzel", serif;
     font-size: 22px;
@@ -3721,7 +3727,7 @@ form .btn-t {
         padding-right: 0;
     }
 
-    .estate-tabs .nav-link.active i{
+    .estate-tabs .nav-link.active i {
         /* font-size: 12px;
         font-weight: 600; */
         line-height: 13px;
