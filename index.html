@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+	<style>
+		img:is([sizes="auto" i], [sizes^="auto," i]) {
+			contain-intrinsic-size: 3000px 1500px
+		}
+	</style>
+	<link rel="canonical" href="index.html" />
+	<title>LUMORA</title>
+	<meta name="description" content="" />
+	<link rel="canonical" href="index.html" />
+	<style id='wp-emoji-styles-inline-css' type='text/css'>
+		img.wp-smiley,
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 0.07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+	</style>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link rel="https://api.w.org/" href="https://terragrande.in/wp-json/" />
+	<link rel="alternate" title="JSON" type="application/json" href="https://terragrande.in/wp-json/wp/v2/pages/6" />
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://terragrande.in/xmlrpc.php?rsd" />
+	<link rel='shortlink' href='https://terragrande.in/?p=6' />
+	<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed"
+		href="https://terragrande.in/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fterragrande.in%2Fproject-1%2Fhome%2F" />
+	<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed"
+		href="https://terragrande.in/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fterragrande.in%2Fproject-1%2Fhome%2F&amp;format=xml" />
+	<meta name="" content="">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+	<link rel="stylesheet" href="/css/sia8poa.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" href="/css/fonts.css">
+	<link rel="stylesheet" href="/css/developer.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body
+	class="page-template page-template-sirmaur-home page-template-sirmaur-home-php page page-id-6 page-child parent-pageid-476 elementor-default elementor-kit-142 elementor-page elementor-page-6">
+
+	<header>
+		<div class="menu" id="header">
+			<a href="#"><img src="/img/logo-main.png" id="terralogo" /></a>
+			<div class="fixmenu">
+				<!-- <img src="/img/hamburger.png" class="menuimg hidetext" id="menusbox" /> -->
+				<i class="bi bi-list menuimg" id="menusbox"></i>
+			</div>
+			<div class="menubox">
+				<a href="#" class="menuterralogo">
+					<img src="/img/logo-3.png" class="d-block d-md-none" id="" />
+				</a>
+				<!-- <img src="/img/cross-button.png" class="crossm" /> -->
+				<i class="fa-solid fa-xmark crossm"></i>
+				<img src="/img/lumora-icon.png" class="menuinnerlogo desktopimagehide" />
+				<img src="/img/lumora-icon.png" class="menuinnerlogo d-block d-md-none" />
+
+				<div class="menus-sub">
+					<div class="menu-{menu-slug}-container">
+						<ul id="menu-sirmaur-menu" class="menuL">
+							<li id="menu-item-487" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-487">
+								<a onclick="navigateAndClose('#about-us')" href="#about-us">About Us</a>
+							</li>
+							<li id="menu-item-485" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-485">
+								<a onclick="navigateAndClose('#amenity')" href="#amenity">Amenities</a>
+							</li>
+							<li id="menu-item-489" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-489">
+								<a onclick="navigateAndClose('#location')" href="#location">Location</a>
+							</li>
+							<li id="menu-item-569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-569">
+								<a onclick="navigateAndClose('#contact')" href="#contact">Contact Us</a>
+							</li>
+							<li id="menu-item-556" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-556">
+								<a onclick="navigateAndClose('#enquiry')" href="#enquiry">Want to Know More?</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- <img src="/img/menu-logo.svg" class="menu-logo hidetext" id="bottomlogo" /> -->
+		</div>
+	</header>
+	<!-- The popup form -->
+	<div class="overlay" id="overlay"></div>
+	<div class="popup-form" id="popupForm">
+		<button class="close-btn" onclick="closeForm()">&times;</button>
+		<h2>Contact Us</h2>
+		<form id="contactForm">
+			<label for="name">Name</label>
+			<input type="text" id="name" name="name" required>
+
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email" required>
+
+			<label for="phone">Phone</label>
+			<input type="tel" id="phone" name="phone" required>
+
+			<label for="message">Message</label>
+			<textarea id="message" name="message" required></textarea>
+
+			<button type="submit" class="submit-btn">Submit</button>
+		</form>
+	</div>
+	<div class="wrappermain">
+		<div>
+			<div class="contactpopupform">
+				<div class="contactformhome contact-info">
+					<a href="javascript:void(0);" class="contactboxfix">
+						Contact Us
+					</a>
+					<h2>ENQUIRY</h2>
+					<svg width="33" data-dismiss="modal" aria-label="Close" class="closetag" height="33"
+						viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M2.53846 33L0 30.4615L13.9615 16.5L0 2.53846L2.53846 0L16.5 13.9615L30.4615 0L33 2.53846L19.0385 16.5L33 30.4615L30.4615 33L16.5 19.0385L2.53846 33Z"
+							fill="#656565" />
+					</svg>
+					<div class="wpcf7 no-js" id="wpcf7-f22-o1" lang="en-US" dir="ltr">
+						<div class="screen-reader-response">
+							<p role="status" aria-live="polite" aria-atomic="true"></p>
+							<ul></ul>
+						</div>
+						<form id="fixed-form" class="wpcf7-form init" aria-label="Contact form"
+							 data-status="init">
+							<div class="row no-gutters">
+								<div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding-right:25px;">
+									<p>
+										<span class="wpcf7-form-control-wrap" data-name="first-name">
+											<input size="40"
+												class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+												autocomplete="name" aria-required="true" aria-invalid="false"
+												placeholder="First Name*" value="" type="text" name="first-name" />
+										</span>
+									</p>
+								</div>
+								<div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding-left:25px;">
+									<p>
+										<span class="wpcf7-form-control-wrap" data-name="last-name">
+											<input size="40"
+												class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+												autocomplete="name" aria-required="true" aria-invalid="false"
+												placeholder="Last Name*" value="" type="text" name="last-name" />
+										</span>
+									</p>
+								</div>
+							</div>
+							<p>
+								<span class="wpcf7-form-control-wrap" data-name="enquiry">
+									<select class="wpcf7-form-control wpcf7-select form-control" aria-invalid="false"
+										name="enquiry">
+										<option value="Enquiry For">Enquiry For</option>
+										<option value="Lumora">LUMORA</option>
+										<option value="Luxury">Luxury</option>
+									</select>
+								</span><br />
+								<span class="wpcf7-form-control-wrap" data-name="mobile-no">
+									<input size="40" maxlength="10"
+										class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel form-control"
+										aria-required="true" aria-invalid="false" placeholder="Mobile Number*" value=""
+										type="tel" name="mobile-no" pattern="[6-9][0-9]{9}"
+										title="Enter a valid mobile number starting with 6-9 and 10 digits long." />
+								</span><br />
+								<span class="wpcf7-form-control-wrap" data-name="country">
+									<input size="40"
+										class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+										aria-required="true" aria-invalid="false" placeholder="Country*" value=""
+										type="text" name="country" />
+								</span><br />
+								<span class="wpcf7-form-control-wrap" data-name="your-email">
+									<input size="40"
+										class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email form-control"
+										aria-required="true" aria-invalid="false" placeholder="Email*" value=""
+										type="email" name="your-email"
+										title="Enter a valid email address." />
+								</span><br />
+								<span class="wpcf7-form-control-wrap" data-name="message">
+									<input size="40"
+										class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+										aria-required="true" aria-invalid="false" placeholder="Message*" value=""
+										type="text" name="message" />
+								</span>
+							</p>
+							<div class="form-control cheeckbox">
+								<p>
+									<span class="wpcf7-form-control-wrap" data-name="acceptance">
+										<span class="wpcf7-form-control wpcf7-acceptance optional">
+											<span class="wpcf7-list-item">
+												<label>
+													<input type="checkbox" name="acceptance" value="1"
+														class="form-check-input" aria-invalid="false" />
+													<span class="wpcf7-list-item-label">I have read and accept the
+														privacy policy and the terms of use</span>
+												</label>
+											</span>
+										</span>
+									</span>
+								</p>
+							</div>
+							<p>
+								<input class="wpcf7-form-control wpcf7-submit has-spinner btn-t" type="submit"
+									value="Connect"/>
+							</p>
+							<div class="wpcf7-response-output" aria-hidden="true"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="top-video">
+			<img src="/img/playblack.svg" class="playblack" />
+			<img src="/img/playwhite.svg" class="playwhite" />
+			<video loop="" autoplay="" muted="" playsinline="" class="d-none d-md-block">
+				<source src="img/lumora-banner.mp4" type="video/mp4">
+			</video>
+			<video loop="" autoplay="" muted="" playsinline="" class="d-block d-md-none">
+				<source src="/img/banner-mob.mp4" type="video/mp4">
+			</video>
+			<!-- <p>RERA No. HPRERASIR2023060/P<br>
+				<a href="https://hprera.nic.in/" target="_blank">www.hprera.nic.in</a>
+			</p> -->
+		</div>
+		<div class="luxry">
+			<div class="onsec">
+				<img src="/img/1.jpg" class="img-fluid w-100 desktopimagehide" />
+				<img src="/img/1.jpg" class="img-fluid w-100 d-block d-md-none" />
+				<!-- <p>Not Just Villas, <br>
+					But a World of Possibility
+				</p> -->
+			</div>
+			<div class="sectwo clearfix">
+				<div class="float-right"><span class="line"></span></div>
+				<!-- <div class="float-right"><img src="/img/luxry-logos.svg" class="img-fluid" /></div> -->
+			</div>
+			<div class="luxry-living" id="about-us">
+				<h1>Lumora Luxury</h1>
+				<p>At Lumora Estates, we believe a Villa is much more<Br>
+					than four walls and a roof. It’s where the soul <bR>
+					settles, where ambition takes a back seat to tranquility,<Br>
+					and where everyday life feels like an indulgence. <Br>
+					This isn’t just real estate; it’s a philosophy.<Br>
+					One that asks, “Why settle for ordinary when<Br> you can live extraordinary?”
+				</p>
+				<!-- <h2>3, 4 & 5 BHK Estates Starting at ₹ 6.70 Cr*</h2> -->
+			</div>
+		</div>
+		<div class="estate-tabs">
+			<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+				<a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+					aria-controls="v-pills-home" aria-selected="true">
+					<i class="fa fa-home"></i>
+				</a>
+				<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+					aria-controls="v-pills-profile" aria-selected="false">
+					<i class="fa fa-concierge-bell"></i>
+				</a>
+				<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+					aria-controls="v-pills-messages" aria-selected="false">
+					<i class="fa fa-map-marker-alt"></i>
+				</a>
+				<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
+					aria-controls="v-pills-settings" aria-selected="false">
+					<i class="fa fa-drafting-compass"></i>
+				</a>
+			</div>
+			<div class="tab-content" id="v-pills-tabContent">
+				<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+					aria-labelledby="v-pills-home-tab">
+					<img src="/img/2.jpg" class="img-fluid" />
+					<p>Organic Harmony</p>
+					<div class="estateexp" id="amenity">
+						<h1>THE ESTATE EXPERIENCE</h1>
+						<p>Experience the simple joys of organic<br>
+							farming and pottery, perfect<Br>
+							for those seeking a connection <Br>
+							with nature’s rhythm.
+						</p>
+						<button class="btn-t" onclick="openForm()">KNOW MORE</button>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile">
+					<img src="/img/3.jpg" class="img-fluid" />
+					<p>Adventures for Every Soul</p>
+					<div class="estateexp">
+						<h1>AMENITIES</h1>
+						<p>Whether it’s golf putting, rock<Br>
+							climbing, or navigating a thrilling<Br>
+							obstacle course,every corner is <Br>
+							designed to spark joyand discovery.
+						</p>
+						<a href="#" class="btn-t" onclick="openForm()">KNOW MORE</a>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+					<img src="/img/6.jpg" class="img-fluid" />
+					<p>&nbsp;</p>
+					<div class="estateexp">
+						<h1>LOCATION ADVANTAGES</h1>
+						<p>Ideally situated just a short drive from<Br>
+							the Delhi-Dehradun Expressway, offering<Br>
+							seamless connectivity while surrounding <Br>
+							you with the serenity of nature.
+						</p>
+						<a href="#" class="btn-t" onclick="openForm()">KNOW MORE</a>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings">
+					<img src="/img/4.jpg" class="img-fluid" />
+					<p>Artistic Impression</p>
+					<div class="estateexp">
+						<h1>FLOOR PLANS</h1>
+						<p>A sprawling 25,000 sq. ft. clubhouse<br>
+							serves as the heart of this<Br>
+							sanctuary, offering spaces for<Br>
+							leisure, celebration, and connection.
+						</p>
+						<a href="#" class="btn-t" onclick="openForm()">KNOW MORE</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="luxry-nature" id="location">
+			<img src="/img/5.jpg" class="img-fluid" />
+			<p>Artistic Impression</p>
+			<div class="luxry-naturebox">
+				<h1>LUMORA ESTATES<br>
+					the <br>Luxury Retreat
+				</h1>
+				<p>Imagine mornings where sunlight filters<Br>
+					through emerald canopies, afternoons spent<Br>
+					savoring the greens of a private golf<Br>
+					course, and evenings gathering around <Br>a crackling campfire.
+				</p>
+				<p>At Lumora Estates, nature isn’t a neighbor;<Br>
+					it’s family. We seamlessly blend luxury with <Br>
+					sustainability, creating sanctuaries <Br>
+					that offer not just Villas but harmony.<Br>
+					At Lumora Estates, we’ve reimagined what it <Br>
+					means to escape the ordinary.
+					<!-- Our upcoming <Br>
+					project, nestled in the foothills of Uttarakhand,<Br>
+					along the pristine Delhi-Dehradun Expressway, <Br>
+					is where luxury and nature converge to create an <Br>
+					experience unlike any other. -->
+				</p>
+				<a href="#" class="btn-t" onclick="openForm()">CONTACT US</a>
+			</div>
+		</div>
+		<div class="quotes">
+			<img src="/img/green-icon.png" class="img-fluid" />
+			<p>Our communities are designed with a singular purpose: to create spaces where the<bR> everyday feels
+				exceptional. From thoughtfully designed villas nestled in nature’s <Br> embrace to amenities that
+				balance indulgence with purpose, Lumora Estates builds <Br> more than Villas; we build stories worth
+				sharing. This isn’t just <Br>about buying property, it’s about investing in a lifestyle.
+			</p>
+			<span class="lines">
+			</span>
+		</div>
+		<div class="blank"></div>
+		<div class="drection drectionhome">
+			<h1>Lumora Estate Walkthrough</h1>
+			<iframe width="90%" height="830" src="https://www.youtube.com/embed/bJuweJq6_UA"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen></iframe>
+		</div>
+		<div class="blank"></div>
+
+
+		<footer>
+			<div class="row no-gutters">
+				<div class="col-12 col-md-4 col-lg-4 col-xl-4 firstsection">
+					<a href="#"><img src="/img/lumora-icon.png" class="img-fluid terrlogo" /></a>
+					<p class="sirmaur_rerano">
+						Spaces that feel intuitive,
+						<br>elegant, and endlessly inspiring.
+						<br>From organic farming to smart
+						<br>living, Thoughtfully curated
+						<br>amenities that encourage <br>
+						connection and relaxation.<br>
+						<a href="#" target="_blank" onclick="openForm()">we honor the land we build on.</a>
+
+					</p>
+					<p class="rushikesh_rerano">
+						<!-- RERA No. UKREP04240000553 -->
+						<br>
+						<!-- <a href="https://www.ukrera.org.in/" target="_blank">www.ukrera.org.in</a> -->
+					</p>
+					<a href="#" target="_blank"><img src="/img/logo-2.png" class="img-fluid edelcologo" /></a>
+					<div class="counts">
+					</div>
+				</div>
+				<div class="col-8 col-md-4 col-lg-4 col-xl-4 secondsection">
+					<!-- Widget Shortcode -->
+					<div id="custom_html-2"
+						class="widget_text widget widget_custom_html widget-shortcode area-arbitrary ">
+						<h2 class="widgettitle">Footer Second Col</h2>
+						<div class="textwidget custom-html-widget">
+							<div>
+								<h1>CALL</h1>
+								<h2><a href="tel:93545 61846">+91 93545 61846</a></h2>
+							</div>
+							<div>
+								<h1>FIND US</h1>
+								<h2>Lumora Estates Private Limited<br>
+									Plot No. 03, Sector-135, Noida,<br>
+									Gautam Buddha Nagar-201301, Uttar Pradesh
+								</h2>
+							</div>
+							<div>
+								<h1>EMAIL</h1>
+								<h2><a href="mailto:Info@lumoraestates.com">Info@lumoraestates.com</a>
+								</h2>
+							</div>
+						</div>
+					</div><!-- /Widget Shortcode -->
+				</div>
+				<div class="col-4 col-md-4  col-lg-4 col-xl-4 thirdsection my-auto">
+					<!-- <h2 class="connect">CONNECT</h2> -->
+					<div class="sirmaur_footerlink">
+						<a href="#about-us" onclick="openForm()">About Us</a>
+						<a href="#location" onclick="openForm()">Location</a>
+						<!-- <a href="#" onclick="openForm()">Projects</a> -->
+						<a href="#amenity" onclick="openForm()">Amenities</a>
+						<a href="#enquiry" onclick="openForm()">Floor Plans</a>
+						<a href="#contact" onclick="openForm()">Contact Us</a>
+					</div>
+					<div class="rushikesh_footerlink">
+						<a href="#about-us" onclick="openForm()">About Us</a>
+						<a href="#location" onclick="openForm()">Location</a>
+						<!-- <a href="#" onclick="openForm()">Projects</a> -->
+						<a href="#amenity" onclick="openForm()">Amenities</a>
+						<a href="#enquiry" onclick="openForm()">Floor Plans</a>
+						<a href="#contact" onclick="openForm()">Contact Us</a>
+					</div>
+				</div>
+			</div>
+			<div class="row no-gutters bottomrow">
+				<div class="col-142 col-md-4 col-lg-4 col-xl-4">
+					<a href="#" onclick="openForm()">Terms of Use</a>
+					<a href="#" onclick="openForm()">Privacy Policy</a>
+					<a href="#" target="_blank" onclick="openForm()">Brochure</a>
+					<!-- <a href="#" target="_blank">FAQ's</a> -->
+				</div>
+				<div class="col-12 col-md-4 col-lg-4 col-xl-4 socialicons">
+					<a href="https://www.instagram.com/lumoraestates/" target="_blank"><i
+							class="fab fa-instagram"></i></a>
+					<a href="https://www.facebook.com/people/Lumora-Estates/61571226150295/" target="_blank"><i
+							class="fab fa-facebook"></i></a>
+					<a href="https://www.linkedin.com/company/105348363/admin/dashboard/" target="_blank"><i
+							class="fab fa-linkedin"></i></a>
+					<a href="https://www.youtube.com/@LumoraEstates/" target="_blank"><i class="fab fa-youtube"></i></a>
+				</div>
+				<div class="col-12 col-md-4 col-lg-4 col-xl-4">
+					<p>© 2024 All Rights Reserved | LUMORA ESTATES</p><br>
+					<p>Designed and Developed by <a href="http://www.ritzmediaworld.in/" target="_blank"
+							class="pi mr-0 mb-0">Ritz
+							Media World</a> </p>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+
+	<script src="/js/jquery-3.6.0.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/common.js"></script>
+	<!-- Meta Pixel Event Code -->
+	<script type='text/javascript'>
+		document.addEventListener('wpcf7mailsent', function (event) {
+			if ("fb_pxl_code" in event.detail.apiResponse) {
+				eval(event.detail.apiResponse.fb_pxl_code);
+			}
+		}, false);
+	</script>
+
+	<script>
+		// document.getElementById('contactForm').addEventListener('submit', function (event) {
+		// 	event.preventDefault(); // Prevent form from submitting and causing a page reload
+
+		// 	const formData = {
+		// 		name: document.getElementById('name').value,
+		// 		email: document.getElementById('email').value,
+		// 		mobile: document.getElementById('mobile').value,
+		// 		message: document.getElementById('message').value
+		// 	};
+
+		// 	sendDataToGoogleSheets(formData); // Pass the form data to your function
+		// });
+		// Function to collect form data
+		document.getElementById('fixed-form').addEventListener('submit', function(event){
+			event.preventDefault();
+			// Create an object to store form data
+			const formData = {};
+
+			// Loop through all form elements and add their values to the formData object
+			const formElements = document.getElementById('fixed-form').elements;
+			for (let i = 0; i < formElements.length; i++) {
+				const element = formElements[i];
+				if (element.name) { // Ensure the element has a name attribute
+					formData[element.name] = element.value;
+				}
+			}
+			if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+				alert('All fields are required.');
+				return;
+			}
+
+			// Email validation (basic pattern)
+			const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+			if (!emailPattern.test(formData.email)) {
+				alert('Please enter a valid email address.');
+				return;
+			}
+
+			// Mobile number validation (10 digits, starts with 6, 7, 8, or 9)
+			const phonePattern = /^[6-9]\d{9}$/;
+			if (!phonePattern.test(formData.phone)) {
+				alert('Please enter a valid mobile number (10 digits, starting with 6-9).');
+				return;
+			}
+			// Send the form data to Google Sheets via the Apps Script Web App
+			sendDataToGoogleSheets(formData);
+			console.log(formData);
+			
+		})
+		function getFormData(event) {
+			event.preventDefault(); // Prevent the default form submission behavior
+			// Select the form element
+			const form = document.getElementById('contactForm');
+
+			// Create an object to store form data
+			const formData = {};
+
+			// Loop through all form elements and add their values to the formData object
+			const formElements = form.elements;
+			for (let i = 0; i < formElements.length; i++) {
+				const element = formElements[i];
+				if (element.name) { // Ensure the element has a name attribute
+					formData[element.name] = element.value;
+				}
+			}
+			
+			if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+				alert('All fields are required.');
+				return;
+			}
+
+			// Email validation (basic pattern)
+			const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+			if (!emailPattern.test(formData.email)) {
+				alert('Please enter a valid email address.');
+				return;
+			}
+
+			// Mobile number validation (10 digits, starts with 6, 7, 8, or 9)
+			const phonePattern = /^[6-9]\d{9}$/;
+			if (!phonePattern.test(formData.phone)) {
+				alert('Please enter a valid mobile number (10 digits, starting with 6-9).');
+				return;
+			}
+			// Send the form data to Google Sheets via the Apps Script Web App
+			sendDataToGoogleSheets(formData);
+
+			// Optionally, reset the form after submission (if desired)
+			form.reset();
+		}
+		// Function to send form data to Google Sheets
+		function sendDataToGoogleSheets(formData) {
+			const url = 'https://script.google.com/macros/s/AKfycbz250FLviCPauZcAWt9yr--agkBVYdmXsQKuRjBgNKNzYEotfDWv0AEa93uzPW0ZJW7/exec'; // Replace with your Web App URL
+
+			const data = new FormData();
+			data.append('Name', formData.name);
+			data.append('Email', formData.email);
+			data.append('Phone', formData.phone);
+			data.append('Message', formData.message);
+			fetch(url, {
+				method: 'POST',
+				body: data,
+			})
+				.then(response => response.json())
+				.then(data => {
+					console.log('Form data successfully submitted:', data);
+					alert('Your message has been submitted!');
+				})
+				.catch(error => {
+					console.error('Error submitting form data:', error);
+					alert('There was an error submitting your form. Please try again later.');
+				});
+		}
+
+		// Add an event listener for form submission
+		document.getElementById('contactForm').addEventListener('submit', getFormData);
+	</script>
+	<!-- <script>
+	let lastScrollY = window.scrollY;
+	const header = document.getElementById('header');
+	window.addEventListener('scroll', () => {
+		const currentScrollY = window.scrollY;
+
+		if (currentScrollY > lastScrollY) {
+			// Scrolling down
+			header.style.transform = 'translateY(-100%)';
+		} else {
+			// Scrolling up
+			header.style.transform = 'translateY(0)';
+		}
+
+		lastScrollY = currentScrollY;
+	});
+</script> -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$(".contactboxfix").click(function () {
+				$(".contactformhome").css("left", "0");
+			});
+
+			$(".closetag").click(function () {
+				$(".contactformhome").css("left", "-800px");
+				if ($(window).width() < 992) {
+					$(".contactformhome").css("left", "-576px");
+				}
+				if ($(window).width() < 767) {
+					$(".contactformhome").css("left", "-281px");
+				}
+			});
+		});
+
+	</script>
+	<script>
+		// Open the popup form with animation
+		function openForm() {
+			document.getElementById("popupForm").classList.add("show");
+			document.getElementById("overlay").classList.add("show");
+		}
+
+		// Close the popup form
+		function closeForm() {
+			document.getElementById("popupForm").classList.remove("show");
+			document.getElementById("overlay").classList.remove("show");
+		}
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			let lastScrollTop = 0; // Track the last scroll position
+			const header = document.getElementById('header'); // Get the header element
+
+			window.addEventListener('scroll', function () {
+				const currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Get the current scroll position
+				const isMobile = window.innerWidth <= 768; // Check if the screen is mobile-sized (<= 768px)
+
+				if (isMobile) {
+					// For mobile screens: Change background based on scroll position
+					if (currentScroll === 0) {
+						header.style.backgroundColor = 'transparent';
+					} else {
+						header.style.backgroundColor = '#0F281A'; // Adjust as needed
+					}
+				}
+
+				// Header show/hide logic
+				if (currentScroll > lastScrollTop) {
+					// Scrolling down: Hide the header
+					header.classList.add('hidden');
+				} else {
+					// Scrolling up: Show the header
+					header.classList.remove('hidden');
+				}
+
+				lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative values
+			});
+		});
+	</script>
+
+<script>
+    // Function to close the sidenav and navigate
+    function navigateAndClose(target) {
+        // Get the sidenav element
+        const sidenav = document.querySelector('.menus-sub');
+        
+        // Scroll to the target section
+        const targetElement = document.querySelector(target);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Add logic to hide the sidenav (e.g., apply a class or change display)
+        if (sidenav) {
+            sidenav.style.display = 'none'; // Example: Hide the sidenav
+        }
+
+        // Optional: Add timeout or animation logic for better UX
+    }
+</script>
+
+</body>
+
+</html>
