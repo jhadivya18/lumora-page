@@ -24,6 +24,9 @@ $(document).ready(function () {
   $(".crossm").click(function () {
     $(".menubox").toggle();
   });
+  $(".menu-item").click(function () {
+    $(".menubox").toggle();
+  });
 
   $("video").prop("muted", true);
   $(".playblack,.playwhite").click(function () {
