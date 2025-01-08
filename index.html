@@ -122,7 +122,7 @@
 	<div class="wrappermain">
 		<div>
 			<div class="contactpopupform">
-				<div class="contactformhome contact-info">
+				<div class="contactformhome contact-info" id="main-form">
 					<a href="javascript:void(0);" class="contactboxfix">
 						Contact Us
 					</a>
@@ -546,7 +546,7 @@
 		});
 
 		function closeFixedForm() {
-			const fixedForm = document.getElementById('fixed-form');
+			const fixedForm = document.getElementById('main-form');
 			if (fixedForm) {
 				fixedForm.style.display = 'none';
 			}
