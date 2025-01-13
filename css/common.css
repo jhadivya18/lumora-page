@@ -478,7 +478,7 @@ a:hover {
     background-size: Cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 460px;
+    height: auto;
 }
 
 .quotes img {
@@ -3800,7 +3800,7 @@ form .btn-t {
 
     .quotes {
         padding: 35px 0px 35px 0px;
-        height: 313px;
+        height: auto;
     }
 
     .quotes img {
@@ -5030,7 +5030,7 @@ form .btn-t {
 
     .popup-form {
         width: 300px !important;
-        top: 40% !important;
+        top: 50% !important;
     }
 
 }
